@@ -6,28 +6,62 @@
 // size() -- is this only for the entire tree or can it be used with a root nodes descendant? p 187
 // clear -- free memory allocation of each node with delete?
 
-namespace custom
+
+template <class T>
+class BNode
 {
-	template <class T>
-	class BNode
-	{
-	public:
-		T Data;
-		BNode<T>* pLeft;
-		BNode<T>* pRight;
-		BNode<T>* pParent;
-		BNode();
-		BNode(const T & t);
-	};
+public:
+	T data;
+	BNode<T>* pLeft;
+	BNode<T>* pRight;
+	BNode<T>* pParent;
+	BNode() : pLeft(NULL), pRight(NULL), pParent(NULL), data(NULL) {} //instructions do not mention settin Data to null
+	BNode(const T & t) : pLeft(NULL), pRight(NULL), pParent(NULL), data(t) {}
+};
 
-	void addLeft(BNode <T> * pNode, BNode <T> * pAdd);
-	void addRight(BNode <T> * pNode, BNode <T> * pAdd);
-	void addLeft(BNode <T> * pNode, const T & t) throw (const char *);
-	void addRight(BNode <T> * pNode, const T & t) throw (const char *);
-	int sizeBTree(const BNode <T> * pRoot);
-	void deleteBTree(BNode <T> * & pNode);
-	BNode <T> * copyBTree(const BNode <T> * pSrc) throw (const char *);
+template <class T>
+void addLeft(BNode <T> * pNode, BNode <T> * pAdd)
+{
+	pNode->pLeft = pAdd;
+	pAdd->pParent = pNode;
+}
 
-} // !namespace custom
+template <class T>
+void addRight(BNode <T> * pNode, BNode <T> * pAdd)
+{
+	pNode->pRight = pAdd;
+	pAdd->pParent = pNode;
+}
+
+template <class T>
+void addLeft(BNode <T> * pNode, const T & t) throw (const char *)
+{
+	BNode<T>* pAdd = new BNode<T>(t);
+	pNode->pLeft = pAdd;
+	pAdd->pParent = pNode;
+}
+
+template <class T>
+void addRight(BNode <T> * pNode, const T & t) throw (const char *)
+{
+	BNode<T>* pAdd = new BNode<T>(t);
+	pNode->pRight = pAdd;
+	pAdd->pParent = pNode;
+}
+
+template <class T>
+int sizeBTree(const BNode <T> * pRoot)
+{
+	return 0;
+}
+
+template <class T>
+void deleteBTree(BNode <T> * & pNode)
+{}
+
+template <class T>
+BNode <T> * copyBTree(const BNode <T> * pSrc) throw (const char *)
+{}
+
 
 #endif // !BNODE_H

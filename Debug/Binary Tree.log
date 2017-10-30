@@ -1,0 +1,6 @@
+﻿  huffman.cpp
+c:\users\tolmans\desktop\cs 235\binary tree\binary tree\bnode.h(37): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+c:\users\tolmans\desktop\cs 235\binary tree\binary tree\bnode.h(45): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+c:\users\tolmans\desktop\cs 235\binary tree\binary tree\bnode.h(63): warning C4290: C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
+  Binary Tree.vcxproj -> C:\Users\Tolmans\Desktop\CS 235\Binary Tree\Debug\Binary Tree.exe
+  Binary Tree.vcxproj -> C:\Users\Tolmans\Desktop\CS 235\Binary Tree\Debug\Binary Tree.pdb (Partial PDB)
