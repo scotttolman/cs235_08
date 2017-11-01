@@ -122,6 +122,7 @@
     <Text Include="huffman1.txt" />
     <Text Include="huffman2.txt" />
     <Text Include="huffman3.txt" />
+    <Text Include="tmp.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="makefile" />

@@ -293,9 +293,19 @@ void testMerge()
       addRight(pMiddle->pRight, pUpper);
       cout << "Merged tree: { " << pMiddle            << "}"
            << " size = "        << sizeBTree(pMiddle) << endl;
+
+      // copy the tree
+      BNode <char> * pCopy = copyBTree(pMiddle);
       
       // delete the tree
       deleteBTree(pMiddle);
+      assert(pMiddle == NULL);
+
+      // display the copied tree
+      cout << "Copied tree: { " << pCopy            << "}"
+           << " size = "        << sizeBTree(pCopy) << endl;
+      deleteBTree(pCopy);
+      assert(pCopy == NULL);
    }
    catch (const char * error)
    {
