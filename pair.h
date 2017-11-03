@@ -47,12 +47,12 @@ public:
    const T2 & getSecond() const { return second; }
    
    // compare Pairs.  Only first will be compared!
-   bool operator >  (const pair & rhs) const { return first >  rhs.first; }
-   bool operator >= (const pair & rhs) const { return first >= rhs.first; }
-   bool operator <  (const pair & rhs) const { return first <  rhs.first; }
-   bool operator <= (const pair & rhs) const { return first <= rhs.first; }
-   bool operator == (const pair & rhs) const { return first == rhs.first; }
-   bool operator != (const pair & rhs) const { return first != rhs.first; }
+   bool operator >  (const pair & rhs) const { return second >  rhs.second; }
+   bool operator >= (const pair & rhs) const { return second >= rhs.second; }
+   bool operator <  (const pair & rhs) const { return second <  rhs.second; }
+   bool operator <= (const pair & rhs) const { return second <= rhs.second; }
+   bool operator == (const pair & rhs) const { return second == rhs.second; }
+   bool operator != (const pair & rhs) const { return second != rhs.second; }
    
    // these are public.  We cannot validate!
    T1 first;
