@@ -38,11 +38,12 @@ void huffman(const string & fileName)
 	if (fin.fail())
 		cout << "Error: could not read file.\n";
 	custom::pair<string, float> p;
-	while (!fin.eof())
+	while (!fin.eof()) //adds last one twice
 	{
 		fin >> p;
 		huffy.push_back(p);
 	}
+	huffy.pop_back(); //removes duplicate result
 	fin.close();
 
 	std::sort(huffy.begin(), huffy.end());
@@ -50,7 +51,7 @@ void huffman(const string & fileName)
 	std::cout << "Testing file extraction and sorting: ";
 	for (int i = 0; i < huffy.size(); i++)
 	{
-		cout << huffy[i];
+		cout << huffy[i] << endl;
 	}
    return;
 }

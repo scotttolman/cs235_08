@@ -69,18 +69,17 @@ void deleteBTree(BNode <T> * & pNode)
 	deleteBTree(pNode->pLeft);
 	deleteBTree(pNode->pRight);
 	delete pNode;
+	pNode = NULL;
 }
 
 template <class T>
 BNode <T> * copyBTree(const BNode <T> * pSrc) throw (const char *)
 {
-	BNode<T>* destination = new BNode<T>();
-	if (!(pSrc))
-	{
-		destination = NULL;
-		return destination;
-	}
-	
+	if (!pSrc)
+		return NULL;
+
+	BNode<T>* destination = new BNode<T>(pSrc->data);
+
 	destination->pLeft = copyBTree(pSrc->pLeft);
 	if (destination->pLeft)
 		destination->pLeft->pParent = destination;
